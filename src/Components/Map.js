@@ -1,5 +1,5 @@
-import React from "react"
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import React, { Component } from 'react';
+import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
 // 28.49236803999953, -106.91044081952663
 // 28.502438122874477, -106.91254367131775
@@ -7,44 +7,54 @@ const containerStyle = {
     width: '100%',
     height: '100%'
   };
+
+  const markers = [
+    {
+      id: 1,
+      position: { lat: 28.49236803999953, lng: -106.91044081952663 }
+    },
+    {
+      id: 2,
+      position: { lat: 28.59236803999953, lng: -106.81044081952663 }
+    }
+  ];
   
   const center = {
     lat: 28.49236803999953,
-    lng: -106.91254367131775
+    lng: -106.91044081952663
   };
+
+  const othercenter = {
+    lat: 28.59236803999953,
+    lng: -106.81044081952663
+  };
+
+  
   
   function MyComponent() {
-    const { isLoaded } = useJsApiLoader({
-      id: 'google-map-script',
-      googleMapsApiKey: "AIzaSyC5QRQPWJyh8jLPz7NRS0Dyr5EUASRiO0E"
-    })
-  
-    const [map, setMap] = React.useState(null)
-  
-    const onLoad = React.useCallback(function callback(map) {
-      const bounds = new window.google.maps.LatLngBounds(center);
-      map.fitBounds(bounds);
-      setMap(map)
-    }, [])
-  
-    const onUnmount = React.useCallback(function callback(map) {
-      setMap(null)
-    }, [])
-  
-    return isLoaded ? (
+    return (
+      <LoadScript
+        googleMapsApiKey="AIzaSyC5QRQPWJyh8jLPz7NRS0Dyr5EUASRiO0E"
+      >
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={10}
-          onLoad={onLoad}
-          onUnmount={onUnmount}
+          zoom={15}
         >
-          { /* Child components, such as markers, info windows, etc. */ 
 
-          }
+        {markers.map(point => {
+          return(
+            <MarkerF
+            key={point.id}
+            position={point.position}
+            />
+          )
+        })}
+          { /* Child components, such as markers, info windows, etc. */ }
           <></>
         </GoogleMap>
-    ) : <></>
+      </LoadScript>
+    )
   }
   
   export default React.memo(MyComponent)
