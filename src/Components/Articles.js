@@ -86,37 +86,44 @@ const Article = () => {
 
     return(
         <>
-            <section className="filter_section">
-                <h2>Filters</h2>
-                <hr/>
-                <h3>Rating</h3>
-                <input type="checkbox" id="rating" name="rating" value="0" onClick={(event) => ratingValue(event)}/>1 star <br/>
-                <input type="checkbox" id="rating" name="rating" value="1" onClick={(event) => ratingValue(event)}/>2 star <br/>
-                <input type="checkbox" id="rating" name="rating" value="2" onClick={(event) => ratingValue(event)}/>3 star <br/>
-                <input type="checkbox" id="rating" name="rating" value="3" onClick={(event) => ratingValue(event)}/>4 star <br/>
-                <input type="checkbox" id="rating" name="rating" value="4" onClick={(event) => ratingValue(event)}/>5 star <br/>
-            </section>
-
             <section className="places_section">
             <div className="places_sortby">
                 <h2>The Top {quantity} Best Restaurants in your Area</h2>
+                <div className='sort_options'>
+                    <div className='rating_div'>
+                        <span>Rating:</span>
+                        <ul>
+                            <li><input type="checkbox" id="rating" name="rating" value="0" onClick={(event) => ratingValue(event)}/>1 star</li>
+                            <li><input type="checkbox" id="rating" name="rating" value="1" onClick={(event) => ratingValue(event)}/>2 star</li>
+                            <li><input type="checkbox" id="rating" name="rating" value="2" onClick={(event) => ratingValue(event)}/>3 star</li>
+                            <li><input type="checkbox" id="rating" name="rating" value="3" onClick={(event) => ratingValue(event)}/>4 star</li>
+                            <li><input type="checkbox" id="rating" name="rating" value="4" onClick={(event) => ratingValue(event)}/>5 star</li>
+                        </ul>
+                    </div>
 
-                <span>Items: </span>
-                <select name="select" defaultValue={10} onChange={(e) => setQuantity(e.target.value)}>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>
+                    <div>
+                        <span>Items: </span>
+                            <select name="select" defaultValue={10} onChange={(e) => setQuantity(e.target.value)}>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                    </div>
 
-                <span>Sort: </span>
+                    <div>
+                        <span>Sort: </span>
 
-                <select name="select" value={sortedType} onChange={(e) => setSortedType(e.target.value)}>
-                    <option value="Random">Random</option>
-                    <option value="Alphabetically">Alphabetically</option>
-                    <option value="Rating">Rating</option>
-                </select>
+                        <select name="select" value={sortedType} onChange={(e) => setSortedType(e.target.value)}>
+                            <option value="Random">Random</option>
+                            <option value="Alphabetically">Alphabetically</option>
+                            <option value="Rating">Rating</option>
+                        </select>
+                    </div>
+
+                </div>
+                
                 
 
 
@@ -140,13 +147,13 @@ const Article = () => {
                                         <span>
                                             {("\u2B50").repeat(place.rating + 1)}
                                             {(place.rating + 1)} ({(Math.floor(Math.random() * (1000 - 600 + 1) + 600))} reviews)</span>
-                                        <p className="article_location">Location: {place.address.street}, { place.address.city}, {place.address.state}</p>
+                                        <p className="article_location">{place.address.street}, { place.address.city}, {place.address.state}</p>
                                         <p className="article_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
                                         <div className="contact_options">
                                             <div className="phone_options">
-                                                <p><i className="fa-solid fa-phone"></i> <a href={"tel:" + place.contact.phone}>{place.contact.phone}</a><br/>
-                                                <i className="fa-solid fa-envelope"></i> <a href={"mailto:" + place.contact.email + "?subject=Melp Order"}>{place.contact.email}</a></p>
+                                                <p className='contact_buttons'><a href={"tel:" + place.contact.phone}><i className="fa-solid fa-phone"></i></a>
+                                                <a href={"mailto:" + place.contact.email + "?subject=Melp Order"}><i className="fa-solid fa-envelope"></i></a></p>
                                             </div>
                                             <div className="share_buttons">
                                                 Share:

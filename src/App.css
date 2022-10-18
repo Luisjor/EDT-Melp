@@ -13,6 +13,18 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style-type: none;
+  padding-inline-start: 0px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+ }
+
+ li {
+  display: inline;
+  font-size: 13px;
+ }
+
 main{
   margin-top: 50px;
   margin: auto;
@@ -22,13 +34,18 @@ main{
 }
 
 header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
   border-bottom: 1px solid rgb(224, 224, 224);
   height: 7vh;
 }
 
 header h1{
+
   margin: 0px;
+
 }
 
 a{
@@ -40,36 +57,38 @@ a{
   width: 40vw;
 }
 
-.filter_section{
-  width: 10vw;
-  padding: 10px;
-}
-
 .places_section{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  width: 50vw;
+  width: 60vw;
   height: 100%;
   margin: auto;
   overflow-y: auto;
   padding-top: 10px;
 }
 
+.sort_options{
+  display: flex;
+  gap: 20px;
+}
+
 .places_sortby{
   display: flex;
-  width: 90%;
+  flex-direction: column;
   align-items: center;
   margin: auto;
-  justify-content: flex-end
+  justify-content: flex-end;
+  text-align: center;
 }
 
 .places_sortby h2{
-  margin-right: auto;
+  margin: 0px;
 }
 
 .places_sortby span{
   font-size: 13px;
+}
+
+.rating_div{
+  display: flex;
 }
 
 select{
@@ -105,6 +124,13 @@ select{
   width: 100%;
   background-position: center;
   background-size: cover;
+}
+
+.contact_buttons{
+  font-size: 15px;
+  margin: 0px;
+  display: flex;
+  gap: 10px;
 }
 
 .place_data{
@@ -151,32 +177,39 @@ select{
   font-size: 13px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1300px) {
   main{
-    grid-template-columns: .2fr 1fr;
-    grid-template-rows: 1fr .4fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: .6fr .4fr ;
     width: 100vw;
   }
+
+  .place_card{
+    height: 300px;
+  }
+
   .places_section{
-    display: grid;
-    grid-template-columns: 1fr;
     gap: 20px;
-    grid-column: 2;
     grid-row: 1;
     margin: 0px;
     width: 100%;
   }
 
-  .filter_section{
-    grid-column: 1;
-    grid-row: 1;
-    height: 100%;
-    width: 100%;
-  }
-
   .map_container{
-    grid-column: 1 / span 2;
     grid-row: 2;
     width: 100vw;
+  }
+
+  .places_sortby{
+    text-align: center;
+  }
+
+  .sort_options {
+    gap: 0px;
+    flex-direction: column;
+  }
+
+  .article_description{
+    margin: 0px;
   }
 }
