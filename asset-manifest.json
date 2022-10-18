@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/EDT-Melp/static/css/main.cb6bfcb7.css",
+    "main.js": "/EDT-Melp/static/js/main.bfc19d5a.js",
+    "static/js/787.54448199.chunk.js": "/EDT-Melp/static/js/787.54448199.chunk.js",
+    "index.html": "/EDT-Melp/index.html",
+    "main.cb6bfcb7.css.map": "/EDT-Melp/static/css/main.cb6bfcb7.css.map",
+    "main.bfc19d5a.js.map": "/EDT-Melp/static/js/main.bfc19d5a.js.map",
+    "787.54448199.chunk.js.map": "/EDT-Melp/static/js/787.54448199.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb6bfcb7.css",
+    "static/js/main.bfc19d5a.js"
+  ]
+}
