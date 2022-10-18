@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { GoogleMap, LoadScript, MarkerF, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 import {
     FacebookShareButton,
     FacebookIcon,
-    InstapaperShareButton,
-    InstapaperIcon,
     TwitterShareButton,
     TwitterIcon,
     WhatsappShareButton,
