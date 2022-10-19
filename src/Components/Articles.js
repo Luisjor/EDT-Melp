@@ -54,7 +54,7 @@ const Article = () => {
     
     const loadPlaces = async() => {
         try{
-            const response = await fetch('https://recruiting-datasets.s3.us-east-2.amazonaws.com/data_melp.json');
+            const response = await fetch('https://raw.githubusercontent.com/Luisjor/EDT-Melp/main/src/Components/text');
 
             const datos = await response.json()
             setPlaces(datos)
