@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/EDT-Melp/static/css/main.cb6bfcb7.css",
-    "main.js": "/EDT-Melp/static/js/main.9460e8ba.js",
+    "main.js": "/EDT-Melp/static/js/main.f5d125cd.js",
     "static/js/787.54448199.chunk.js": "/EDT-Melp/static/js/787.54448199.chunk.js",
     "index.html": "/EDT-Melp/index.html",
     "main.cb6bfcb7.css.map": "/EDT-Melp/static/css/main.cb6bfcb7.css.map",
-    "main.9460e8ba.js.map": "/EDT-Melp/static/js/main.9460e8ba.js.map",
+    "main.f5d125cd.js.map": "/EDT-Melp/static/js/main.f5d125cd.js.map",
     "787.54448199.chunk.js.map": "/EDT-Melp/static/js/787.54448199.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cb6bfcb7.css",
-    "static/js/main.9460e8ba.js"
+    "static/js/main.f5d125cd.js"
   ]
 }
